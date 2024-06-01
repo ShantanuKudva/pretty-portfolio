@@ -9,6 +9,7 @@ import Shantanu2 from "../../public/Shantanu.jpeg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { BsPersonFill } from "react-icons/bs";
 import { Separator } from "@/components/ui/separator";
 import ButtonShapeTabs from "@/components/syntaxUI/tabs";
 import { motion } from "framer-motion";
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="container relative mx-auto flex  h-[100vh] flex-col py-12 max-w-[1000px]">
+          <div className="container relative mx-auto flex flex-col py-12 max-w-[1000px]">
             <nav className="flex justify-between mb-3">
               <Image
                 src="/Shantanu3.jpeg"
@@ -51,6 +52,13 @@ export default function RootLayout({ children }) {
             </h2>
 
             <div className="flex gap-4 py-4">
+              <a
+                href="/Shantanu_Kudva_CV_2024 (2).pdf"
+                target="_blank"
+                className="text-2xl cursor-pointer"
+              >
+                <BsPersonFill />
+              </a>
               <a
                 href="https://linkedin.com/in/shantanu-kudva"
                 target="_blank"

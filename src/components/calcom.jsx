@@ -15,7 +15,7 @@ export default function ShantanuCalCom() {
   // console.log(themes);
 
   useEffect(() => {
-    console.log(themes);
+    // console.log(themes);
     (async function () {
       const cal = await getCalApi({});
       cal("ui", {

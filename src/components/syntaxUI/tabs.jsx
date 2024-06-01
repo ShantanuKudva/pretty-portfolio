@@ -2,18 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-const tabs = ["Home", "Contact"];
-
-// interface TabProps {
-//   text: string
-//   selected: boolean
-//   setSelected: (text: string) => void
-// }
+const tabs = ["Home", "Blogs", "Contact"];
 
 const Tab = ({ text, selected, setSelected }) => {
   const router = useRouter();
+
   return (
     <button
       onClick={() => {
@@ -46,8 +41,21 @@ const Tab = ({ text, selected, setSelected }) => {
 const ButtonShapeTabs = () => {
   const [selected, setSelected] = useState(tabs[0]);
   const router = useRouter();
+  const pathname = usePathname();
+
   useEffect(() => {
-    router.push("/");
+    const segments = pathname.split("/").filter((segment) => segment);
+    const capitalizedSegments = segments.map(
+      (segment) => segment[0].toUpperCase() + segment.slice(1)
+    );
+    console.log(capitalizedSegments);
+    const joinedSegments = capitalizedSegments.join("");
+    const index = tabs.findIndex((val) => val === capitalizedSegments[0]);
+    if (index === -1) {
+      setSelected(tabs[0]);
+    } else {
+      setSelected(tabs[index]);
+    }
   }, []);
 
   return (

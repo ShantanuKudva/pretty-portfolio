@@ -73,3 +73,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "apple-font-thin";
+  src: url("../../public/SFPRODISPLAYTHINITALIC.OTF") format("opentype"); /* OTF format */
+  font-weight: normal;
+  font-style: normal;
+}
