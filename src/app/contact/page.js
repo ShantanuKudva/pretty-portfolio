@@ -8,10 +8,12 @@ export default function Docs() {
   return (
     <div>
       <ChildTransition>
-        <h2>
+        <h2 className="font-[apple-font-regular]">
           Let&apos;s build something beautiful, together! Book a meeting below
         </h2>
-        <ShantanuCalCom />
+        <div className="my-4">
+          <ShantanuCalCom />
+        </div>
       </ChildTransition>
     </div>
   );

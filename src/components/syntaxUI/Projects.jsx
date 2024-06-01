@@ -44,7 +44,7 @@ const HoverSpring = () => {
                 bounce: 0.7,
               }}
               key={project.id}
-              className="mt-5 text-left"
+              className="mt-5 text-left border border-gray-200 dark:border-gray-800 p-4 rounded-lg shadow-sm hover:shadow-lg "
             >
               <a target="_blank" rel="noopener noreferrer" href={project.link}>
                 <Image

@@ -5,7 +5,7 @@ import ChildTransition from "./transition";
 export default function Home() {
   return (
     <ChildTransition>
-      <div className="text-gray-700 text-sm  dark:text-gray-400">
+      <div className="text-gray-700 dark:text-gray-400 mt-3">
         Hello! I&apos;m Shantanu Kudva, an Electronics and Communication
         Engineer from Bangalore. With a deep passion for full stack web
         development, I enjoy crafting innovative web solutions that merge

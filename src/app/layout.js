@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <div className="py-7 px-7 xl:px-96 sm:px-7 lg:px-40 md:px-7">
+          <div className="container relative mx-auto flex  h-[100vh] flex-col py-12 max-w-[1000px]">
             <nav className="flex justify-between mb-3">
               <Image
                 src="/Shantanu3.jpeg"
@@ -43,7 +43,9 @@ export default function RootLayout({ children }) {
               />
               <ModeToggle />
             </nav>
-            <h1 className="font-[inter] text-xl">Shantanu Kudva</h1>
+            <h1 className="font-[apple-font-medium] text-2xl">
+              Shantanu Kudva
+            </h1>
             <h2 className="text-sm text-gray-500 mt-1 italic">
               Software Developer
             </h2>
@@ -77,14 +79,14 @@ export default function RootLayout({ children }) {
 
             <Separator className="mx-2 my-4" />
 
-            <div className="my-6">
+            <div className="mt-3">
               <ButtonShapeTabs />
             </div>
             {children}
           </div>
           <footer className="mb-10">
             <div className="text-sm flex justify-center items-center  mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-              <p className="leading-5 text-gray-700 font-[inter]">
+              <p className="leading-5 text-gray-700 font-[apple-font-regular]">
                 &copy; 2024 - Shantanu Kudva.
               </p>
             </div>

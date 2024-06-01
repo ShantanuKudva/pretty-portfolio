@@ -8,25 +8,37 @@
 
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { useTheme } from "next-themes";
+
 export default function ShantanuCalCom() {
+  const themes = useTheme();
+  // console.log(themes);
+
   useEffect(() => {
+    console.log(themes);
     (async function () {
       const cal = await getCalApi({});
       cal("ui", {
+        theme: themes.theme,
         styles: {
-          branding: { brandColor: "#000000" },
+          branding: {
+            brandColor: themes.theme === "light" ? "#000000" : "#ffffff",
+          },
         },
         hideEventTypeDetails: false,
-        layout: "column_view",
+        layout: "row_view",
       });
     })();
-  }, []);
+  }, [themes]);
   return (
-    <div className="h-[90vh]">
+    <div id="calcom-root">
       <Cal
-        calLink="shantanukudva/30min"
-        style={{ width: "100%", height: "100%", overflow: "scroll" }}
-        config={{ layout: "column_view" }}
+        calLink="shantanukudva2002/30min"
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        config={{ layout: "row_view" }}
       />
     </div>
   );
