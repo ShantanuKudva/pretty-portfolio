@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
             {children}
           </div>
           <footer className="mb-10">
-            <div className="text-sm flex justify-center items-center border-t border-gray-900/10 pt-8">
+            <div className="text-sm flex justify-center items-center">
               <p className="leading-5 text-gray-700 font-[apple-font-regular]">
                 &copy; 2024 - Shantanu Kudva.
               </p>

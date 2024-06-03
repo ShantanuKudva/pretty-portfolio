@@ -21,7 +21,7 @@ const ProjectsData = [
     image: "/ml-frontend.png",
   },
   {
-    id: 2,
+    id: 3,
     name: "Shantanu Kudva",
     description: "An 8-bit game themed portfolio!",
     link: "https://shantanu-portfolio-ebon.vercel.app/",

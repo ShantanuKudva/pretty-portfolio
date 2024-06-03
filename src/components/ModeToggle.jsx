@@ -5,17 +5,17 @@ import { useTheme } from "next-themes";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [isDarkMode, setDarkMode] = React.useState(true);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [isDarkMode, setDarkMode] = React.useState(resolvedTheme === "dark");
+
+  React.useEffect(() => {
+    setDarkMode(resolvedTheme === "dark");
+  }, [resolvedTheme]);
 
   const toggleDarkMode = (checked) => {
     setDarkMode(!checked);
     setTheme(checked ? "dark" : "light");
   };
-
-  React.useEffect(() => {
-    setDarkMode(theme === "dark");
-  }, [theme]);
 
   return (
     <DarkModeSwitch checked={isDarkMode} onChange={toggleDarkMode} size={30} />

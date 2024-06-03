@@ -64,14 +64,31 @@ const logos = [
     name: "VsCode",
     url: "/icons/vscode.svg",
   },
+  {
+    name: "Figma",
+    url: "/icons/figma.svg",
+  },
+  {
+    name: "FireBase",
+    url: "/icons/firebase.svg",
+  },
+  {
+    name: "TailwindCSS",
+    url: "/icons/tailwindcss.svg",
+  },
+  {
+    name: "C++",
+    url: "/icons/c++.svg",
+  },
 ];
 
 import Image from "next/image";
 
 const AnimatedLogoCloud = () => {
   return (
-    <div className="w-full py-12">
-      <div className="mx-auto w-full px-4 md:px-8">
+    <div className="w-full py-12 ">
+      {/* px-4 md:px-8 */}
+      <div className="mx-auto w-full">
         <div
           className="group relative mt-6 flex gap-6 overflow-hidden p-2"
           style={{
@@ -83,12 +100,12 @@ const AnimatedLogoCloud = () => {
             .fill(null)
             .map((index) => (
               <div
-                key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
+                key={Math.random() * 1000}
+                className="flex shrink-0 animate-logo-cloud flex-row justify-around"
               >
                 {logos.map((logo, key) => (
                   <Image
-                    key={key}
+                    key={Math.random() * 1000}
                     src={logo.url}
                     className="h-10 w-28 px-2 brightness-0  dark:invert"
                     alt={`${logo.name}`}
