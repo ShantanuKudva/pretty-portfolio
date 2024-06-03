@@ -6,7 +6,13 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export function ModeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
-  const [isDarkMode, setDarkMode] = React.useState(resolvedTheme === "dark");
+  const [isDarkMode, setDarkMode] = React.useState(() => {
+    let resolvedTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    if (resolvedTheme.matches) {
+      return true;
+    }
+    return false;
+  });
 
   React.useEffect(() => {
     setDarkMode(resolvedTheme === "dark");
