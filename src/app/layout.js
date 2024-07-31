@@ -6,13 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ModeToggle";
 import Image from "next/image";
 import Shantanu2 from "../../public/Shantanu.jpeg";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
-import { BsPersonFill } from "react-icons/bs";
+import { FaInstagram, FaLinkedin, FaMailBulk } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
 import { Separator } from "@/components/ui/separator";
 import ButtonShapeTabs from "@/components/syntaxUI/tabs";
-import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,8 +31,8 @@ export default function RootLayout({ children }) {
           <div className="container relative mx-auto flex flex-col py-12 max-w-[1000px]">
             <nav className="flex justify-between mb-3">
               <Image
-                src="/Shantanu3.jpeg"
-                alt="Shantanu"
+                src="/Dhaatri.jpeg"
+                alt="Dhaatri"
                 width={100}
                 height={100}
                 style={{
@@ -45,22 +42,22 @@ export default function RootLayout({ children }) {
               <ModeToggle />
             </nav>
             <h1 className="font-[apple-font-medium] text-2xl">
-              Shantanu Kudva
+              Dhaatri Prasanna
             </h1>
             <h2 className="text-sm text-gray-500 mt-1 italic">
-              Software Developer
+              ML Engineer | Teacher{" "}
             </h2>
 
             <div className="flex gap-4 py-4">
-              <a
+              {/* <a
                 href="/Shantanu_Kudva_CV_2024 (2).pdf"
                 target="_blank"
                 className="text-2xl cursor-pointer"
               >
                 <BsPersonFill />
-              </a>
+              </a> */}
               <a
-                href="https://linkedin.com/in/shantanu-kudva"
+                href="https://www.linkedin.com/in/dhaatri-rao-27a2591b4/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl cursor-pointer"
@@ -68,20 +65,18 @@ export default function RootLayout({ children }) {
                 <FaLinkedin />
               </a>
               <a
-                href="https://github.com/ShantanuKudva"
+                href="https://instagram.com/dhaatri_rao/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl cursor-pointer"
               >
-                <FaGithub />
+                <FaInstagram />
               </a>
               <a
-                href="https://leetcode.com/ShantanuKudva"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:dhaatriiprasanna@gmail.com"
                 className="text-2xl cursor-pointer"
               >
-                <SiLeetcode />
+                <CgMail />
               </a>
             </div>
 
@@ -95,7 +90,7 @@ export default function RootLayout({ children }) {
           <footer className="mb-10">
             <div className="text-sm flex justify-center items-center">
               <p className="leading-5 text-gray-700 font-[apple-font-regular]">
-                &copy; 2024 - Shantanu Kudva.
+                &copy; {new Date().getFullYear()} - Made by Shantanu Kudva.
               </p>
             </div>
           </footer>

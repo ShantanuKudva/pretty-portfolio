@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-const tabs = ["Home", "Blogs", "Contact"];
+const tabs = ["Home", "Contact"];
 
 const Tab = ({ text, selected, setSelected }) => {
   const router = useRouter();
@@ -23,7 +23,7 @@ const Tab = ({ text, selected, setSelected }) => {
       className={`${
         selected
           ? "text-white dark: dark:text-black"
-          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-white font-[apple-font-medium]"
+          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-white font-sans"
       } relative rounded-md px-2 py-1 text-sm font-[inter] transition-colors`}
     >
       <span className="relative z-10">{text}</span>

@@ -33,7 +33,7 @@ export default function ShantanuCalCom() {
   return (
     <div id="calcom-root">
       <Cal
-        calLink="shantanukudva2002/30min"
+        calLink="dhaatriprasanna/15min"
         style={{
           width: "100%",
           height: "100%",
