@@ -10,6 +10,8 @@ import { FaInstagram, FaLinkedin, FaMailBulk } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { Separator } from "@/components/ui/separator";
 import ButtonShapeTabs from "@/components/syntaxUI/tabs";
+import { BackgroundDots } from "@/components/syntaxUI/DotPattern";
+import MinimalSocialsFooter from "@/components/syntaxUI/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* <BackgroundDots /> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -85,16 +88,18 @@ export default function RootLayout({ children }) {
             <div className="mt-3">
               <ButtonShapeTabs />
             </div>
+
             {children}
           </div>
-          <footer className="mb-10">
+          {/* <footer className="mb-10">
             <div className="text-sm flex justify-center items-center">
               <p className="leading-5 text-gray-700 font-[apple-font-regular]">
                 &copy; {new Date().getFullYear()} - Made by Shantanu Kudva.
               </p>
             </div>
-          </footer>
+          </footer> */}
         </ThemeProvider>
+        <MinimalSocialsFooter />
       </body>
     </html>
   );

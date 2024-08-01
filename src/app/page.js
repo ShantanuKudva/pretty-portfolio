@@ -5,6 +5,8 @@ import AnimatedLogoCloud from "@/components/syntaxUI/logoCloud";
 import { Separator } from "@/components/ui/separator";
 import Testimonals from "@/components/syntaxUI/Testimonials";
 import { FAQ } from "@/components/ui/faq";
+import Kaliyiri from "@/components/Kaliyiri";
+import BackgroundDots from "@/components/syntaxUI/DotPattern";
 
 export default function Home() {
   return (
@@ -15,11 +17,15 @@ export default function Home() {
         Kannada language. With my dedication to teaching and my deep affection
         for Kannada, I am excited to share my knowledge and help students master
         this beautiful language through my venture{" "}
-        <span className="underline font-bold">&quot;Kaliyiri&quot;</span>. Join
-        me on this wonderful journey to explore and learn Kannada together!
+        <span>
+          <Kaliyiri />
+        </span>
+        <br />
+        Join me on this wonderful journey to explore and learn Kannada together!
       </div>
+
       <div>
-        {/* <h2 className="mt-10 text-lg">Testimonals</h2> */}
+        <BackgroundDots />
         <div className="mt-4">
           <Testimonals />
         </div>

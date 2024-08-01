@@ -54,9 +54,9 @@ export function FAQ() {
         <AccordionContent>
           Pricing will be discussed during a call to tailor the courses to your
           specific needs. You can book a call in the{" "}
-          <Button>
+          <span className="underline">
             <a href="/contact">contact</a>
-          </Button>{" "}
+          </span>{" "}
           section.
         </AccordionContent>
       </AccordionItem>
