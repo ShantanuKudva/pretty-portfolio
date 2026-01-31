@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     description: 'Minimalistic 3D portfolio showcasing backend engineering projects',
     type: 'website',
   },
+  icons: {
+    icon: '/sk-logo.png',
+  },
 }
 
 export const viewport: Viewport = {
