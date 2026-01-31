@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Instrument_Sans, Instrument_Serif, Playfair_Display } from 'next/font/google'
+import { Instrument_Sans, Instrument_Serif, Playfair_Display, Mrs_Saint_Delafield } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { GridBackground } from '@/components/GridBackground'
 import './globals.css'
@@ -23,6 +23,12 @@ const _playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
+});
+
+const _mrsSaintDelafield = Mrs_Saint_Delafield({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-mrs-saint',
 });
 
 // Add Monospace Font
@@ -66,7 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased relative bg-background text-foreground ${_instrumentSans.variable} ${_instrumentSerif.variable} ${_jetbrainsMono.variable} ${_playfairDisplay.variable}`}>
+      <body className={`font-sans antialiased relative bg-background text-foreground ${_instrumentSans.variable} ${_instrumentSerif.variable} ${_jetbrainsMono.variable} ${_playfairDisplay.variable} ${_mrsSaintDelafield.variable}`}>
         <GridBackground />
         {children}
         <GradualBlur preset="page-footer" height="6rem" strength={2} fadeOutOnScroll />

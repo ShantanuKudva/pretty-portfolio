@@ -32,7 +32,7 @@
 }
 
 .masonry-item img {
-    /* display: block; */
+    display: block;
     width: 100%;
     height: auto;
     object-fit: cover;

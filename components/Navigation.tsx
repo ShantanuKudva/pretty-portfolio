@@ -9,7 +9,6 @@ import { FiMenu, FiX } from 'react-icons/fi';
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
   const [mounted, setMounted] = useState(false);
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -64,103 +63,40 @@ export function Navigation() {
         {/* Left: SK Logo - Enhanced Glass Surface with Smooth Watery Animation */}
         <motion.div
           className="pointer-events-auto"
-          onMouseEnter={() => setIsLogoHovered(true)}
-          onMouseLeave={() => setIsLogoHovered(false)}
-          animate={{
-            width: isLogoHovered ? (window.innerWidth < 768 ? 160 : 200) : 48,
-            scale: isLogoHovered ? 1.02 : 1
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 30,
-            mass: 1
-          }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <GlassSurface
-            width="100%"
+            width="auto"
             height={48}
             borderRadius={50}
             borderWidth={1.5}
-            blur={isLogoHovered ? 16 : 12}
-            displace={isLogoHovered ? 2.0 : 0.5}
-            distortionScale={isLogoHovered ? -100 : -180}
-            redOffset={isLogoHovered ? 5 : 0}
-            greenOffset={isLogoHovered ? 15 : 10}
-            blueOffset={isLogoHovered ? 25 : 20}
-            brightness={isLogoHovered ? 70 : 50}
+            blur={12}
+            displace={0.5}
+            distortionScale={-180}
+            redOffset={0}
+            greenOffset={10}
+            blueOffset={20}
+            brightness={50}
             opacity={0.95}
             mixBlendMode="screen"
-            className="flex items-center justify-center border border-white/20 overflow-hidden shadow-lg"
+            className="flex items-center justify-center border border-white/20 overflow-hidden shadow-lg px-8 md:px-10"
           >
-            <motion.div
-              layout
-              className="flex items-center text-white"
-              style={{ fontFamily: 'var(--font-instrument-sans)' }}
+            <div
+              className="flex items-center text-white pt-1"
+              style={{ fontFamily: 'var(--font-mrs-saint)' }}
             >
-              <motion.span
-                animate={{
-                  fontSize: isLogoHovered ? "1.25rem" : "1.375rem",
-                  letterSpacing: isLogoHovered ? "0.025em" : "-0.05em",
-                  fontWeight: isLogoHovered ? 200 : 100
+              <span
+                style={{
+                  fontSize: "1.75rem",
+                  fontWeight: 400,
+                  whiteSpace: "nowrap"
                 }}
-                transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
               >
-                S
-              </motion.span>
-
-              <motion.span
-                initial={false}
-                animate={{
-                  width: isLogoHovered ? "auto" : 0,
-                  opacity: isLogoHovered ? 1 : 0,
-                  marginRight: isLogoHovered ? "0.25em" : 0,
-                  x: isLogoHovered ? 0 : -10
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 30,
-                  mass: 0.8,
-                  delay: isLogoHovered ? 0.05 : 0
-                }}
-                className="overflow-hidden whitespace-nowrap"
-                style={{ fontSize: "1.25rem", letterSpacing: "0.025em", fontWeight: 100 }}
-              >
-                hantanu
-              </motion.span>
-
-              <motion.span
-                animate={{
-                  fontSize: isLogoHovered ? "1.25rem" : "1.375rem",
-                  letterSpacing: isLogoHovered ? "0.025em" : "-0.05em",
-                  fontWeight: isLogoHovered ? 200 : 100
-                }}
-                transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
-              >
-                K
-              </motion.span>
-
-              <motion.span
-                initial={false}
-                animate={{
-                  width: isLogoHovered ? "auto" : 0,
-                  opacity: isLogoHovered ? 1 : 0,
-                  x: isLogoHovered ? 0 : -10
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 30,
-                  mass: 0.8,
-                  delay: isLogoHovered ? 0.1 : 0
-                }}
-                className="overflow-hidden whitespace-nowrap"
-                style={{ fontSize: "1.25rem", letterSpacing: "0.025em", fontWeight: 100 }}
-              >
-                udva
-              </motion.span>
-            </motion.div>
+                Shantanu Kudva
+              </span>
+            </div>
           </GlassSurface>
         </motion.div>
 
