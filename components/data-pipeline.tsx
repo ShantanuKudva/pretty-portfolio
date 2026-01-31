@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import AtomicPipeline from './AtomicPipeline'; // Import AtomicPipeline component
+import AtomicPipeline from './pipeline/AtomicPipeline'; // Import AtomicPipeline component
 
 type DeploymentStage = 1 | 2 | 3;
 

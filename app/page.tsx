@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { GreetingLoader } from '@/components/GreetingLoader';
+import { GreetingLoader } from '@/components/greeting/GreetingLoader';
 import { HeroSection } from '@/components/HeroSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
