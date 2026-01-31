@@ -1,0 +1,6 @@
+
+SK is simply a while circle with white text. make it aesthetic and add more light throw on the hero page.and there is a white pill betwen the projects and hobbies, the glass is not seen.
+
+https://www.reactbits.dev/components/fluid-glass?thickness=10&chromaticAberration=0.1&mode=bar&scale=0.15 for my nav.
+
+and there are two technical arsenal headings.
