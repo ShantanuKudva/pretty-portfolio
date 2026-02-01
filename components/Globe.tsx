@@ -1,8 +1,8 @@
 'use client';
 
-import { Suspense, useMemo, useState } from 'react';
+import { Suspense, useMemo, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
+import { OrbitControls, Stars, useProgress } from '@react-three/drei';
 import { Earth } from './globe/Earth';
 import { TrafficLayer } from './globe/TrafficLayer';
 import { Markers } from './globe/Markers';
@@ -154,11 +154,104 @@ function StatsOverlay() {
   );
 }
 
+function GlobeLoader() {
+  const { progress } = useProgress();
+  const [shouldFadeOut, setShouldFadeOut] = useState(false);
+  const [mounted, setMounted] = useState(true);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      setShouldFadeOut(true);
+      const timer = setTimeout(() => setMounted(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [progress]);
+
+  if (!mounted) return null;
+
+  return (
+    <div
+      className={`absolute inset-0 z-50 flex items-center justify-center bg-[#020617] transition-opacity duration-500 pointer-events-none ${shouldFadeOut ? 'opacity-0' : 'opacity-100'}`}
+    >
+      <style jsx>{`
+        .spinner {
+          width: 44px;
+          height: 44px;
+          animation: spinner-y0fdc1 2s infinite ease;
+          transform-style: preserve-3d;
+        }
+
+        .spinner > div {
+          background-color: rgba(56, 189, 248, 0.2);
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          border: 2px solid #38bdf8;
+        }
+
+        .spinner div:nth-of-type(1) {
+          transform: translateZ(-22px) rotateY(180deg);
+        }
+
+        .spinner div:nth-of-type(2) {
+          transform: rotateY(-270deg) translateX(50%);
+          transform-origin: top right;
+        }
+
+        .spinner div:nth-of-type(3) {
+          transform: rotateY(270deg) translateX(-50%);
+          transform-origin: center left;
+        }
+
+        .spinner div:nth-of-type(4) {
+          transform: rotateX(90deg) translateY(-50%);
+          transform-origin: top center;
+        }
+
+        .spinner div:nth-of-type(5) {
+          transform: rotateX(-90deg) translateY(50%);
+          transform-origin: bottom center;
+        }
+
+        .spinner div:nth-of-type(6) {
+          transform: translateZ(22px);
+        }
+
+        @keyframes spinner-y0fdc1 {
+          0% {
+            transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+          }
+          50% {
+            transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+          }
+          100% {
+            transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+          }
+        }
+      `}</style>
+      <div className="flex flex-col items-center gap-4">
+        <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p className="text-sky-400 font-mono text-xs tracking-wider animate-pulse">
+          INITIALIZING {Math.round(progress)}%
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function Globe() {
   const [selectedPoint, setSelectedPoint] = useState<GeoDataPoint | null>(null);
 
   return (
     <div className="relative w-full h-full group">
+      <GlobeLoader />
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <color attach="background" args={['#020617']} />
         <Suspense fallback={null}>
