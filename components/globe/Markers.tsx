@@ -37,9 +37,9 @@ export function Markers({ points, onMarkerClick }: MarkersProps) {
 
             // Color based on type
             if (point.metadata?.type === 'threat') {
-                tempColor.set('#ef4444'); // Red for threats
+                tempColor.set('#f43f5e'); // Rose-500 (Modern Red)
             } else {
-                tempColor.set('#3b82f6'); // Blue for servers
+                tempColor.set('#0ea5e9'); // Sky-500 (Cyber Blue)
             }
             colors.push(tempColor.r, tempColor.g, tempColor.b);
         });
@@ -73,10 +73,12 @@ export function Markers({ points, onMarkerClick }: MarkersProps) {
         <instancedMesh
             ref={meshRef}
             args={[undefined, undefined, points.length]}
+            frustumCulled={false}
             onClick={(e) => {
                 e.stopPropagation();
                 const index = e.instanceId;
                 if (index !== undefined && onMarkerClick) {
+                    console.log('Marker clicked:', index, points[index]);
                     onMarkerClick(points[index]);
                 }
             }}
@@ -92,7 +94,7 @@ export function Markers({ points, onMarkerClick }: MarkersProps) {
                 hoverRef.current = null;
             }}
         >
-            <sphereGeometry args={[1, 16, 16]}>
+            <sphereGeometry args={[1.5, 16, 16]}>
                 <instancedBufferAttribute
                     attach="attributes-color"
                     args={[meshColors, 3]}

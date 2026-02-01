@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaFileDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import ProfileCard from "@/components/ProfileCard";
 
@@ -62,16 +62,6 @@ export function ContactSection() {
                                 <div className="text-left">
                                     <p className="text-xs text-muted-foreground font-mono uppercase">LinkedIn</p>
                                     <p className="text-sm font-semibold text-foreground">Professional Profile</p>
-                                </div>
-                            </a>
-
-                            <a href="tel:+919945274012" className="flex items-center gap-4 p-4 rounded-xl bg-background/50 border border-border/50 hover:border-green-500/50 hover:bg-green-500/5 transition-all group">
-                                <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 group-hover:scale-110 transition-transform">
-                                    <FaPhone />
-                                </div>
-                                <div className="text-left">
-                                    <p className="text-xs text-muted-foreground font-mono uppercase">Phone</p>
-                                    <p className="text-sm font-semibold text-foreground">+91 99452 74012</p>
                                 </div>
                             </a>
 

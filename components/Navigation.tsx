@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GlassSurface from './ui/GlassSurface';
-import { SiGithub } from 'react-icons/si';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 export function Navigation() {
@@ -132,15 +131,6 @@ export function Navigation() {
                   )}
                 </a>
               ))}
-              <div className="w-px h-4 bg-border/50 mx-2" />
-              <a
-                href="https://github.com/ShantanuKudva"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/80 hover:text-foreground transition-all hover:scale-110"
-              >
-                <SiGithub className="w-4 h-4" />
-              </a>
             </div>
           </GlassSurface>
         </div>
@@ -180,22 +170,6 @@ export function Navigation() {
                   {item.label}
                 </motion.a>
               ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-8 pt-8 border-t border-white/10 w-full flex justify-center gap-8"
-              >
-                <a
-                  href="https://github.com/ShantanuKudva"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground/80 hover:text-foreground transition-all p-2 bg-white/5 rounded-full"
-                >
-                  <SiGithub className="w-6 h-6" />
-                </a>
-              </motion.div>
             </div>
           </motion.div>
         )}

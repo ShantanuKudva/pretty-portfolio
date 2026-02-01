@@ -6,11 +6,13 @@ import { Globe } from './Globe';
 import { ParallaxBackground } from './ParallaxBackground';
 import { ComplexBlueprint } from './data-pipeline';
 import { PlatformStack } from './pipeline/PlatformStack';
+import { StreakVisual } from './pipeline/StreakVisual';
 
 export function ProjectsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isGlobeVisible, setIsGlobeVisible] = useState(false);
   const [showDSA, setShowDSA] = useState(false);
+  const [showStreak, setShowStreak] = useState(false);
   const [isBlueprintZoomed, setIsBlueprintZoomed] = useState(false);
 
   useEffect(() => {
@@ -39,6 +41,16 @@ export function ProjectsSection() {
 
     return () => clearTimeout(timer);
   }, [isGlobeVisible]);
+
+  useEffect(() => {
+    if (!showDSA) return;
+
+    const timer = setTimeout(() => {
+      setShowStreak(true);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [showDSA]);
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
@@ -390,6 +402,66 @@ export function ProjectsSection() {
               </div>
             </div>
 
+          </div>
+        )}
+
+        {/* Separator */}
+        {showDSA && <div className="w-full h-[1px] bg-border/40 my-16" />}
+
+        {/* Project 3: Streak DSA (Content RIGHT, Visual LEFT) */}
+        {showStreak && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center animate-in fade-in duration-1000">
+            {/* Left Column: Visual */}
+            <div className="order-2 lg:order-1 w-full aspect-[3/4] sm:aspect-square max-w-[500px] h-auto mx-auto rounded-3xl overflow-hidden relative border border-white/10 bg-slate-950/50 backdrop-blur-sm shadow-2xl group">
+              <StreakVisual />
+            </div>
+
+            {/* Right Column: Content */}
+            <div className="order-1 lg:order-2 space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">Project 03</span>
+                  <div className="h-[1px] w-12 bg-border"></div>
+                </div>
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight">
+                  Streak DSA
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                  A modern habit-tracking platform for Data Structures & Algorithms practice. Features a heat-map based consistency tracker, Markdown-rich problem logging, and gamified streak mechanics.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl border border-border/50 bg-background/30 hover:bg-background/50 transition-colors">
+                  <h4 className="font-medium text-foreground mb-1">Consistency Engine</h4>
+                  <p className="text-sm text-muted-foreground">GitHub-style activity heatmap and daily tracking logic</p>
+                </div>
+                <div className="p-4 rounded-xl border border-border/50 bg-background/30 hover:bg-background/50 transition-colors">
+                  <h4 className="font-medium text-foreground mb-1">Modern Stack</h4>
+                  <p className="text-sm text-muted-foreground">Built with Next.js 15, Server Actions, and Prisma ORM</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-4">
+                {['Next.js 15', 'Prisma', 'PostgreSQL', 'Auth.js', 'Framer Motion', 'Recharts'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 rounded-full text-xs font-mono border border-border text-muted-foreground bg-background/50">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <a
+                  href="https://streak-dsa.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-foreground text-background font-medium rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2"
+                >
+                  Visit Deployment
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
           </div>
         )}
 

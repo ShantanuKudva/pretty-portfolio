@@ -11,6 +11,7 @@ interface MasonryProps {
         gap: number[];    // [10, 20, 20]
     };
     renderItem: (item: any, index: number) => React.ReactNode;
+    enableAnimation?: boolean;
 }
 
 function useMedia(queries: string[], values: number[], defaultValue: number) {
@@ -35,7 +36,7 @@ function useMedia(queries: string[], values: number[], defaultValue: number) {
     return value;
 }
 
-export default function Masonry({ items, config, renderItem }: MasonryProps) {
+export default function Masonry({ items, config, renderItem, enableAnimation = true }: MasonryProps) {
     const { columns: columnCounts, gap: gapCounts } = config || {
         columns: [1, 2, 3],
         gap: [15, 20, 30]
@@ -66,7 +67,7 @@ export default function Masonry({ items, config, renderItem }: MasonryProps) {
 
     // Animation
     useEffect(() => {
-        if (!containerRef.current) return;
+        if (!containerRef.current || !enableAnimation) return;
 
         const elements = containerRef.current.querySelectorAll('.masonry-item');
 
@@ -82,7 +83,7 @@ export default function Masonry({ items, config, renderItem }: MasonryProps) {
             }
         );
 
-    }, [columns]); // Re-run when layout changes
+    }, [columns, enableAnimation]); // Re-run when layout changes
 
     return (
         <div ref={containerRef} className="masonry-container">

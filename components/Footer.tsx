@@ -1,37 +1,60 @@
 'use client';
 
-export function Footer() {
-  return (
-    <footer className="w-full bg-foreground text-background border-t border-background/20">
-      <div className="max-w-7xl mx-auto px-6 py-12 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Shantanu Kudva</h4>
-            <p className="text-background/70">
-              Backend Engineer specializing in scalable distributed systems and infrastructure optimization.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Quick Links</h4>
-            <ul className="space-y-2 text-background/70">
-              <li><a href="https://github.com/ShantanuKudva" className="hover:text-background transition-colors">GitHub</a></li>
-              <li><a href="https://linkedin.com/in/shantanu-kudva" className="hover:text-background transition-colors">LinkedIn</a></li>
-              <li><a href="mailto:kudvashantanu2002@gmail.com" className="hover:text-background transition-colors">Email</a></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Contact</h4>
-            <ul className="space-y-2 text-background/70">
-              <li>Bengaluru, India</li>
-              <li>+91-9945274012</li>
-              <li><a href="mailto:kudvashantanu2002@gmail.com" className="hover:text-background transition-colors">kudvashantanu2002@gmail.com</a></li>
-            </ul>
-          </div>
-        </div>
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-        <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-background/60">
-          <p>&copy; 2024-2026 Shantanu Kudva. All rights reserved.</p>
-          <p>Built with React Three Fiber & Next.js</p>
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="w-full bg-foreground text-background">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {/* Main row */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Logo / Name */}
+          <div className="flex items-center gap-3">
+            <span
+              className="text-2xl"
+              style={{ fontFamily: 'var(--font-mrs-saint)' }}
+            >
+              Shantanu Kudva
+            </span>
+            <span className="text-background/40">|</span>
+            <span className="text-sm text-background/70">Bengaluru, India</span>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/ShantanuKudva"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-all hover:scale-110"
+              aria-label="GitHub"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a
+              href="https://linkedin.com/in/shantanu-kudva"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-all hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:kudvashantanu2002@gmail.com"
+              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-all hover:scale-110"
+              aria-label="Email"
+            >
+              <FaEnvelope className="w-5 h-5" />
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-sm text-background/50 text-center md:text-right">
+            <p>&copy; {currentYear} Shantanu Kudva</p>
+          </div>
         </div>
       </div>
     </footer>
