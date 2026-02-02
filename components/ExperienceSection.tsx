@@ -106,14 +106,14 @@ export function ExperienceSection() {
       borderColor: 'border-purple-500/20'
     },
     {
-      title: 'The Senior Backend Engineer',
+      title: 'The Lead Backend & Systems Engineer',
       period: 'Jan 2026 – Present',
-      role: 'Senior Backend Engineer',
+      role: 'Lead Backend & Systems Engineer',
       type: 'Core Infrastructure',
       story: 'Focused on critical infrastructure implementation and collaborating on architectural decisions. I work closely with senior engineering leadership to ideate and build scalable systems, bridging the gap between high-level design and rock-solid execution.',
       achievements: [
-        'Migrated from ELK to ClickHouse, achieving 50% faster queries on billions of logs',
-        'Built comprehensive observability stack: Prometheus, Grafana, custom dashboards',
+        'Leading engineering squads to resolve complex scalability bottlenecks and technical debt',
+        'Mentoring team members on distributed system patterns and engineering excellence',
         'Lead cross-functional teams on product & infrastructure roadmap',
         'Balanced innovation with operational excellence at scale',
       ],

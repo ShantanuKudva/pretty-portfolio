@@ -57,7 +57,7 @@ export function HeroSection() {
         >
           <div className="space-y-4">
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-serif text-foreground tracking-tight leading-tight">
-              Backend Engineer <span className="italic text-muted-foreground">&</span> <span className="italic">System Architect</span>
+              Lead Backend Engineer <span className="italic text-muted-foreground">&</span> <span className="italic">System Engineer</span>
             </motion.h1>
             <motion.p variants={itemVariants} className="text-lg text-muted-foreground leading-relaxed">
               Building <span className="font-serif italic text-foreground text-xl">scalable distributed systems</span> with Go, Python, and modern backend technologies. Specialized in high-throughput real-time systems, infrastructure optimization, and data reliability.
@@ -85,7 +85,7 @@ export function HeroSection() {
 
           <motion.div variants={itemVariants} className="pt-6 border-t border-border">
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-mono text-muted-foreground uppercase tracking-widest">
-              <span>Backend Engineer</span>
+              <span>Lead Backend Engineer</span>
               <span className="text-foreground/30">•</span>
               <span>Strategic Thinker</span>
               <span className="text-foreground/30">•</span>
